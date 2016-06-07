@@ -12,7 +12,10 @@ namespace AhSamples
         static void Main(string[] args)
         {
             var prg = new Program();
-            prg.TestTimeout();
+            //prg.TestTimeout();
+            //prg.TestOrderNaive();
+            prg.TestOrder();
+            Console.ReadLine();
         }
 
         private void TestTimeout()
@@ -74,10 +77,53 @@ namespace AhSamples
                 }
             });
 
-            Console.ReadLine();
+            
         }
 
+        private void TestOrder()
+        {
+            var t1 = GetResult(TimeSpan.FromMilliseconds(7000));
+            var t2 = GetResult(TimeSpan.FromMilliseconds(2000));
+            var t3 = GetResult(TimeSpan.FromMilliseconds(3000), 1);
+            
+            var tasks = new Task<string>[] { t1, t2, t3 };
 
+            //TestOrderNaive(tasks);
+            TestOrderCompletion(tasks);
+        }
+
+        private async void TestOrderNaive(Task<string>[] tasks)
+        {
+            foreach (var t in tasks)
+            {
+                try
+                {
+                    var res = await t;
+                    Console.WriteLine(res);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                
+            }
+        }
+
+        private async void TestOrderCompletion(Task<string>[] tasks)
+        {
+            foreach (var t in tasks.InCompletionOrder())
+            {
+                try
+                {
+                    var res = await t;
+                    Console.WriteLine(res);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+        }
 
         private async Task<string> GetResult(TimeSpan ts, int throwEx = 0)
         {
