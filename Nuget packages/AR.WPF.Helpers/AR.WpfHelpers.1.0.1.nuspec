@@ -5,12 +5,13 @@
         <version>1.0.1</version>
         <title>AR.WpfHelpers</title>
         <authors>aRyapolov</authors>
+        <licenseUrl>https://github.com/kurchavy/AR.Helpers/blob/master/License</licenseUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Base helper classes to use in WPF applications</description>
         <tags>INPC, WPF</tags>
     </metadata>
     <files>
-        <file src="..\..\WpfBaseHelpers\bin\Release\AR.WpfHelpers.dll" target="lib\net45\AR.WpfHelpers.dll" />
-        <file src="..\..\WpfBaseHelpers\bin\Release\AR.WpfHelpers.XML" target="lib\net45\AR.WpfHelpers.XML" />
+        <file src="lib\net45\AR.WpfHelpers.dll" target="lib\net45\AR.WpfHelpers.dll" />
+        <file src="lib\net45\AR.WpfHelpers.XML" target="lib\net45\AR.WpfHelpers.XML" />
     </files>
 </package>
