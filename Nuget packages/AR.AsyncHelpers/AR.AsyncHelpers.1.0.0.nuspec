@@ -4,12 +4,13 @@
         <id>AR.AsyncHelpers</id>
         <version>1.0.0</version>
         <title>AR.AsyncHelpers</title>
-        <authors>Alex Riapolov</authors>
+        <authors>Aleksandr Riapolov</authors>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>My package description.</description>
+        <description>Execute task with timeout, execute tasks in competion order</description>
+        <tags>async, Task</tags>
     </metadata>
     <files>
-        <file src="..\..\AsyncHelpers\bin\Release\AR.AsyncHelpers.dll" target="lib\AR.AsyncHelpers.dll" />
-        <file src="..\..\AsyncHelpers\bin\Release\AR.AsyncHelpers.XML" target="lib\AR.AsyncHelpers.XML" />
+        <file src="lib\AR.AsyncHelpers.dll" target="lib\AR.AsyncHelpers.dll" />
+        <file src="lib\AR.AsyncHelpers.XML" target="lib\AR.AsyncHelpers.XML" />
     </files>
 </package>
